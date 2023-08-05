@@ -3,32 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrapped Calculator</title>
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <form action="/calculate" method="post">
-            <h1>Calculator</h1>
-            <div class="input-boxes">
-                <input type="number" name="firstNumber" placeholder="Enter First Number">
+    <nav>
+        <div class="nav-wrapper navbar-size">
+            <a href="#" class="brand-logo"><img class="user-image-size" src="images/food.png"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a target="_blank" href="sass.html">Home</a></li>
+                <li><a target="_blank" href="sass.html">Locations</a></li>
+                <li><a target="_blank" href="badges.html">Categories</a></li>
+                <li><a target="_blank" href="badges.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main-body">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h1 id="heading">Welcome to Online Food Delivery</h1>
+                    <p class="flow-text">We have developed an exciting online food delivery system that utilizes 
+                        the Materialize framework and its components to provide a delightful user experience.</p>
+                </div>
+                <div class="col s12" style="display: flex; justify-content: center;">
+                    <img class="materialboxed materialboxed-image" width="250" src="images/second.webp">
+                </div>
+                <div class="col s12 center-align">
+                    <a class="waves-effect waves-light btn click-me-button modal-trigger" id="clickMeButton" data-target="modal1"><i class="material-icons left">auto_fix_high</i>Order Now</a>
+                </div>
             </div>
-            <div class="input-boxes">
-                <input type="number" name="secondNumber" placeholder="Enter Second Number">
+            <div class="row" id="card-section">
+                <div class="col s4 center-align">
+                    <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/hungry.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Hungry Jack's<i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">Great burgers need great ingredients. At Hungry Jack’s that’s 100% Aussie beef. And we serve our irresistible, smoky, BBQ flame-grilled beef with big freshly cut salad, chunky hot chips and sensational sauces. All our burgers are made fresh to order, just the way you like them.</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Hungry Jack's<i class="material-icons right">close</i></span>
+                            <p class="card-text">Hungry Jack’s is a proudly Aussie owned company with over 50 years of history. With more than 440 restaurants serving every major population centre in the country, we employ over 19,000 Aussies, serve more than 1.7M Aussies each week and serve up more than 125M Australian beef patties every year.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 center-align">
+                    <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/kfc.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">KFC<i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">The hallmark of KFC's menu is its original recipe fried chicken, which is made with a blend of 11 herbs and spices, creating a unique and flavorful taste. Over the years, KFC has expanded its menu to include various chicken items, such as crispy chicken tenders, chicken sandwiches, chicken wings, and popcorn chicken, among others.
+                            </a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Hungry Jack's<i class="material-icons right">close</i></span>
+                            <p class="card-text">Hungry Jack’s is a proudly Aussie owned company with over 50 years of history. With more than 440 restaurants serving every major population centre in the country, we employ over 19,000 Aussies, serve more than 1.7M Aussies each week and serve up more than 125M Australian beef patties every year.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 center-align">
+                    <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/mac.jpeg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">McDonald's<i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">McDonald's is another renowned international fast-food restaurant chain, considered one of the largest and most influential fast-food companies globally. It was founded in 1940 by Richard and Maurice McDonald as a barbecue restaurant and later transformed into a hamburger stand.</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Hungry Jack's<i class="material-icons right">close</i></span>
+                            <p class="card-text">Hungry Jack’s is a proudly Aussie owned company with over 50 years of history. With more than 440 restaurants serving every major population centre in the country, we employ over 19,000 Aussies, serve more than 1.7M Aussies each week and serve up more than 125M Australian beef patties every year.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="select-options-check">
-                <select name="options">
-                    <option value="add">Addition</option>
-                    <option value="multiply">Multiplication</option>
-                    <option value="subtract">Subtraction</option>
-                    <option value="divide">Division</option>
-                </select>
+        </div>
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="row modal-content">
+                <form class="col s12" method="post" action="/order">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="name" id="name" name="name" type="text" class="validate">
+                            <label for="name"> Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="delivery_address" type="text" name="delivery_address" class="validate">
+                            <label for="delivery_address">Delivery Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="quantity" type="number" name="quantity" class="validate">
+                            <label for="quantity">Quantity</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="phone_number" type="number" name="phone_number" class="validate">
+                            <label for="phone_number">Mobile Number</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 center-align">
+                            <button type="submit" class="waves-effect waves-light btn" id="formSubmit">submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            
-            <button class="btn" type="submit">Calculate</button>
-            <i class='bx bxs-calculator'></i>
-        </form>
-    </div>
-    
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

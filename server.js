@@ -1,55 +1,34 @@
 const express = require('express');
-const fs = require('fs');
-const bodyparser = require('body-parser');
-const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyparser.urlencoded({extended:true}));
-app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public'));
+app.use(express.json());
 
-app.get('', (req,res)=>{
-    res.send(__dirname+"/index.html");
+app.get('/', function (req,res) {
+    res.render('index.html');
 });
 
-app.post('/calculate', (req,res)=>{
-    let num1 = Number(req.body.firstNumber);
-    let num2 = Number(req.body.secondNumber);
-    let options = String(req.body.options);
-    let result;
+app.post('/order',(req,res)=>{
+    const name = req.body.name
+    const address = req.body.delivery_address
+    const qty = req.body.quantity
+    const phoneNumber = req.body.phone_number
+    
+    const orders = {
+        name: name,
+        delivery_address: address,
+        quantity: qty,
+        mobile_number: phoneNumber,
+      }
+    
+    console.log(orders);  
+    res.json(orders);
 
-    switch(options){
-        case 'add':
-            result = num1 + num2;
-            break;
 
-        case 'multiply':
-            result = num1 * num2;
-            break;
-        
-        case 'subtract':
-            result = num1 - num2;
-            break;
-        
-        case 'divide':
-            result = num1 / num2;
-            break;    
-            
-        default:
-            result = 0;    
-    }
-
-    const filePath = path.join(__dirname, '/public/output.html');
-    fs.readFile(filePath, 'utf-8', (err, data) => {
-        if(err){
-            console.log(err);
-        }else{
-            const finalOutput = data.replace('__RESULT__', result);
-            res.send(finalOutput);
-        }
-    });
-
-});
+})
 
 
 app.listen(3000, (req,res)=>{

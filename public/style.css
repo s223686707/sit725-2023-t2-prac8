@@ -1,80 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+}
+.user-image-size {
+    height: 56px;
+    margin: 4px 0;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url(image.jpg) no-repeat;
-
-}
-
-.container {
-    position: relative;
-    width: 420px;
-    background: transparent;
-    color: white;
-    border-radius: 10px;
-    padding: 30px 40px;
-}
-
-.container h1 {
-    font-size: 36px;
-    text-align: center;
-
-}
-
-.container .input-boxes {
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-}
-
-.input-boxes input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
-    color: white;
-    padding: 20px 45px 20px 20px;
-}
-
-.input-boxes input::placeholder {
-    color: white;
-}
-
-.container .select-options-check {
-    padding-top: 15px;
-    display: flex;
-    justify-content: center;
-    margin: -15px 0 15px;
-    border-radius: 40px;
-    border-radius: 0 0 10px rgba(0,0,0,.1);
+.click-me-button {
+    background-color: #EE6E73;
+    margin-top: 50px;
 }
 
 
 
-.container .btn {
-    width: 100%;
-    height: 45px;
-    background: white;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    border-radius: 0 0 10px rgba(0,0,0,.1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
-    margin: 20px 0 15px;
-}
 
