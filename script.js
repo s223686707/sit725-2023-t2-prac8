@@ -14,7 +14,7 @@ const addItems = (items) => {
 }
 
 function getAllItems(){
-    $.get('/getItems', (res)=>{
+    $.get('/api/foodItems', (res)=>{
         if(res.statusCode === 200 ){
             console.log(res.data);
             addItems(res.data);
