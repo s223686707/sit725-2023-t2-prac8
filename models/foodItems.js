@@ -12,9 +12,21 @@ function insertItem(newFood){
             console.error("Error in Inserting Item in DB", err);
         }else{
             console.log("Inserted into DB Successfully!!");
+            
         }
     });
 }
 
-module.exports = {getAllItems, insertItem};
+function DeleteItem(foodItem){
+    collections.deleteOne(foodItem, (err, result) => {
+        if(err){
+            console.error("Error in Inserting Item in DB", err);
+        }else{
+            console.log("Deleted Item Successfully!!");
+            
+        }
+    });
+}
+
+module.exports = {getAllItems, insertItem, DeleteItem};
 

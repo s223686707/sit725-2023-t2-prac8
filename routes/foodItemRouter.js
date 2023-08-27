@@ -10,4 +10,8 @@ router.post('/', (req,res)=>{
     controller.saveFoodOrder(req, res);
 });
 
+router.delete('/', (req,res)=>{
+    controller.deleteFoodOrder(req, res);
+});
+
 module.exports = router;
